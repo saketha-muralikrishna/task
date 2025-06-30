@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5X8BS8QC");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Begin Checkout</title>
+    <style>
+      /* Basic styling for demonstration - you'd likely link an external CSS file */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f4f4f4;
+      }
+      #checkout-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .section-title {
+        color: #555;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #666;
+      }
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="tel"],
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box; /* Ensures padding doesn't add to the width */
+      }
+      .form-group input[type="checkbox"] {
+        margin-right: 8px;
+      }
+      #order-summary {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 4px;
+        margin-top: 20px;
+        border: 1px solid #eee;
+      }
+      #order-summary ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      #order-summary li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted #eee;
+      }
+      #order-summary li:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+      #order-summary .total {
+        font-weight: bold;
+        margin-top: 15px;
+        font-size: 1.1em;
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+      }
+      #checkout-button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background-color: #28a745; /* Green button */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        cursor: pointer;
+        margin-top: 30px;
+        transition: background-color 0.3s ease;
+      }
+      #checkout-button:hover {
+        background-color: #218838;
+      }
+      .error-message {
+        color: red;
+        font-size: 0.9em;
+        margin-top: 5px;
+        display: none; /* Hidden by default, shown with JavaScript */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5X8BS8QC"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="checkout-container">
+      <h1 id="page-title">Begin Checkout</h1>
+
+      <form id="checkout-form" action="thankyou.html" method="POST">
+        <h2 class="section-title" id="contact-info-title">
+          Contact Information
+        </h2>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
+          <div id="email-error" class="error-message"></div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number (Optional):</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+        <div class="form-group">
+          <input
+            type="checkbox"
+            id="newsletter-signup"
+            name="newsletter-signup"
+          />
+          <label for="newsletter-signup">Sign up for our newsletter</label>
+        </div>
+
+        <h2 class="section-title" id="shipping-info-title">
+          Shipping Information
+        </h2>
+        <div class="form-group">
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" name="first_name" required />
+          <div id="first-name-error" class="error-message"></div>
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" name="last_name" required />
+          <div id="last-name-error" class="error-message"></div>
+        </div>
+        <div class="form-group">
+          <label for="address1">Address Line 1:</label>
+          <input type="text" id="address1" name="address1" required />
+          <div id="address1-error" class="error-message"></div>
+        </div>
+        <div class="form-group">
+          <label for="address2">Address Line 2 (Optional):</label>
+          <input type="text" id="address2" name="address2" />
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" required />
+          <div id="city-error" class="error-message"></div>
+        </div>
+        <div class="form-group">
+          <label for="state">State/Province:</label>
+          <input type="text" id="state" name="state" required />
+          <div id="state-error" class="error-message"></div>
+        </div>
+        <div class="form-group">
+          <label for="zip-code">Zip/Postal Code:</label>
+          <input type="text" id="zip-code" name="zip_code" required />
+          <div id="zip-code-error" class="error-message"></div>
+        </div>
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <select id="country" name="country" required>
+            <option value="">Select a country</option>
+            <option value="US">United States</option>
+            <option value="CA">Canada</option>
+            <option value="GB">United Kingdom</option>
+            <option value="IN">India</option>
+          </select>
+          <div id="country-error" class="error-message"></div>
+        </div>
+
+        <h2 class="section-title" id="shipping-method-title">
+          Shipping Method
+        </h2>
+        <div class="form-group">
+          <input
+            type="radio"
+            id="standard-shipping"
+            name="shipping_method"
+            value="standard"
+            checked
+          />
+          <label for="standard-shipping"
+            >Standard Shipping (3-5 Business Days) - ₹50</label
+          ><br />
+          <input
+            type="radio"
+            id="express-shipping"
+            name="shipping_method"
+            value="express"
+          />
+          <label for="express-shipping"
+            >Express Shipping (1-2 Business Days) - ₹150</label
+          >
+        </div>
+
+        <h2 class="section-title" id="order-summary-title">Order Summary</h2>
+        <div id="order-summary">
+          <ul id="item-list">
+            <li id="item-1">
+              <span class="item-name">Product A</span>
+              <span class="item-price">₹500.00</span>
+            </li>
+            <li id="item-2">
+              <span class="item-name">Product B</span>
+              <span class="item-price">₹250.00</span>
+            </li>
+          </ul>
+          <p class="total" id="subtotal">Subtotal: ₹750.00</p>
+          <p class="total" id="shipping-cost">Shipping: ₹50.00</p>
+          <p class="total" id="grand-total">Total: ₹800.00</p>
+        </div>
+
+        <h2 class="section-title" id="payment-info-title">Payment</h2>
+        <p>
+          You will be redirected to a secure payment page after confirming your
+          order.
+        </p>
+        <button type="submit" id="checkout-button">Continue to Payment</button>
+      </form>
+    </div>
+
+    <script>
+      // Basic client-side validation example (you'd typically do more robust validation)
+      const checkoutForm = document.getElementById("checkout-form");
+
+      checkoutForm.addEventListener("submit", function (event) {
+        let isValid = true;
+
+        // Simple email validation
+        const emailInput = document.getElementById("email");
+        const emailError = document.getElementById("email-error");
+        if (
+          !emailInput.value.includes("@") ||
+          !emailInput.value.includes(".")
+        ) {
+          emailError.textContent = "Please enter a valid email address.";
+          emailError.style.display = "block";
+          isValid = false;
+        } else {
+          emailError.style.display = "none";
+        }
+
+        // Example for required text fields
+        const requiredTextFields = [
+          {
+            id: "first-name",
+            errorId: "first-name-error",
+            message: "First name is required.",
+          },
+          {
+            id: "last-name",
+            errorId: "last-name-error",
+            message: "Last name is required.",
+          },
+          {
+            id: "address1",
+            errorId: "address1-error",
+            message: "Address Line 1 is required.",
+          },
+          { id: "city", errorId: "city-error", message: "City is required." },
+          {
+            id: "state",
+            errorId: "state-error",
+            message: "State/Province is required.",
+          },
+          {
+            id: "zip-code",
+            errorId: "zip-code-error",
+            message: "Zip/Postal Code is required.",
+          },
+        ];
+
+        requiredTextFields.forEach((field) => {
+          const input = document.getElementById(field.id);
+          const error = document.getElementById(field.errorId);
+          if (input.value.trim() === "") {
+            error.textContent = field.message;
+            error.style.display = "block";
+            isValid = false;
+          } else {
+            error.style.display = "none";
+          }
+        });
+
+        // Country selection validation
+        const countrySelect = document.getElementById("country");
+        const countryError = document.getElementById("country-error");
+        if (countrySelect.value === "") {
+          countryError.textContent = "Please select a country.";
+          countryError.style.display = "block";
+          isValid = false;
+        } else {
+          countryError.style.display = "none";
+        }
+
+        if (!isValid) {
+          event.preventDefault(); // Stop the form from submitting if validation fails
+        } else {
+          // In a real application, you'd make an AJAX call or navigate to the payment page
+          // alert('Form is valid! Proceeding to payment...');
+        }
+      });
+
+      // Example of dynamically updating shipping cost
+      const standardShippingRadio =
+        document.getElementById("standard-shipping");
+      const expressShippingRadio = document.getElementById("express-shipping");
+      const shippingCostElement = document.getElementById("shipping-cost");
+      const grandTotalElement = document.getElementById("grand-total");
+      const subtotalElement = document.getElementById("subtotal"); // Get subtotal element
+
+      function updateTotals() {
+        let subtotal = parseFloat(
+          subtotalElement.textContent.replace("Subtotal: ₹", "")
+        );
+        let shippingCost = 0;
+
+        if (standardShippingRadio.checked) {
+          shippingCost = 50;
+        } else if (expressShippingRadio.checked) {
+          shippingCost = 150;
+        }
+
+        shippingCostElement.textContent = `Shipping: ₹${shippingCost.toFixed(
+          2
+        )}`;
+        grandTotalElement.textContent = `Total: ₹${(
+          subtotal + shippingCost
+        ).toFixed(2)}`;
+      }
+
+      standardShippingRadio.addEventListener("change", updateTotals);
+      expressShippingRadio.addEventListener("change", updateTotals);
+
+      // Initial update
+      updateTotals();
+    </script>
+  </body>
+</html>

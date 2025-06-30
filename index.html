@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5X8BS8QC");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Haven Interiors: Modern Furniture for Your Home | Online Store
+    </title>
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/google/material-design-icons/master/png/action/home/materialicons/24dp/2x/baseline_home_black_24dp.png"
+      type="image/png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Body Styles */
+      body {
+        font-family: "Raleway", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: #333;
+        line-height: 1.7;
+        background-color: #f8f8f8; /* Soft light background */
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+        color: #212121;
+        margin-top: 0;
+        margin-bottom: 0.5em;
+      }
+      a {
+        text-decoration: none;
+        color: #5a7b73; /* A sophisticated green/teal */
+        transition: color 0.3s ease;
+      }
+      a:hover {
+        color: #3c5e54;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 25px; /* Consistent padding */
+      }
+
+      /* Header & Navigation */
+      #main-header {
+        background-color: #ffffff;
+        padding: 18px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #store-logo {
+        font-family: "Playfair Display", serif;
+        font-size: 2em;
+        font-weight: 700;
+        color: #5a7b73;
+        letter-spacing: 1px;
+      }
+      .nav-links a {
+        color: #555;
+        margin-left: 35px;
+        font-weight: 500;
+        font-size: 0.98em;
+        padding: 5px 0;
+        position: relative;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background: #5a7b73;
+        display: block;
+        margin-top: 5px;
+        transition: width 0.3s ease-in-out;
+        left: 0;
+        bottom: -5px;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      #shop-now-nav-btn {
+        background-color: #5a7b73;
+        color: white;
+        padding: 10px 22px;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      #shop-now-nav-btn:hover {
+        background-color: #3c5e54;
+        transform: translateY(-1px);
+      }
+
+      /* Hero Section */
+      #hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://images.unsplash.com/photo-1556910904-7a13d7c2a792?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjU0OTd8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBsaXZpbmclMjByb29tfGVufDB8fHx8MTcwMzg1MDY2MHww&ixlib=rb-4.0.3&q=80&w=1080")
+            no-repeat center center/cover;
+        color: white;
+        text-align: center;
+        padding: 150px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 700px;
+        position: relative;
+      }
+      .hero-content {
+        max-width: 900px;
+      }
+      #hero-heading {
+        font-size: 4em;
+        margin-bottom: 25px;
+        font-weight: 700;
+        line-height: 1.1;
+        color: white;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+      }
+      #hero-subheading {
+        font-size: 1.4em;
+        margin-bottom: 50px;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #hero-cta-button {
+        display: inline-block;
+        background-color: #e74c3c; /* A contrasting red for urgency */
+        color: white;
+        padding: 18px 45px;
+        border-radius: 8px;
+        font-size: 1.5em;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        transition: background-color 0.3s ease, transform 0.2s ease,
+          box-shadow 0.3s ease;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      }
+      #hero-cta-button:hover {
+        background-color: #c0392b;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Section Styling */
+      .section {
+        padding: 100px 0;
+        text-align: center;
+      }
+      .section-heading {
+        font-size: 3em;
+        margin-bottom: 20px;
+        font-weight: 700;
+        color: #212121;
+      }
+      .section-subheading {
+        font-size: 1.25em;
+        color: #6c757d;
+        max-width: 800px;
+        margin: 0 auto 70px auto;
+      }
+
+      /* Category Showcase */
+      #category-showcase {
+        background-color: #ffffff;
+      }
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+      .category-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .category-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+      .category-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      .category-card:hover img {
+        transform: scale(1.05);
+      }
+      .category-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0)
+        );
+        color: white;
+        padding: 25px;
+        text-align: left;
+      }
+      .category-overlay h3 {
+        font-size: 1.8em;
+        margin-bottom: 5px;
+        color: white;
+      }
+      .category-overlay p {
+        font-size: 1em;
+        margin-bottom: 15px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .category-overlay .shop-link {
+        display: inline-block;
+        color: white;
+        font-weight: 600;
+        border-bottom: 2px solid white;
+        transition: border-color 0.3s ease;
+      }
+      .category-overlay .shop-link:hover {
+        border-color: #e74c3c;
+      }
+
+      /* Value Proposition Section */
+      #value-proposition {
+        background-color: #f0f0f0; /* Slightly darker background */
+        padding: 120px 0;
+      }
+      .value-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 50px;
+        margin-top: 50px;
+      }
+      .value-item {
+        text-align: center;
+        padding: 25px;
+      }
+      .value-item img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+      }
+      .value-item h3 {
+        font-size: 1.8em;
+        color: #5a7b73;
+        margin-bottom: 10px;
+      }
+      .value-item p {
+        font-size: 1.05em;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Testimonials Section */
+      #customer-testimonials {
+        background-color: #ffffff;
+      }
+      .testimonial-slider {
+        /* In a real app, this would be a JS slider */
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap; /* Allows stacking on smaller screens */
+        margin-top: 60px;
+      }
+      .testimonial-card {
+        background-color: #fdfdfd;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 450px;
+        text-align: left;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+        position: relative;
+      }
+      .testimonial-card::before {
+        content: "“";
+        font-family: serif; /* Use a serif font for the quote */
+        font-size: 5em;
+        color: #e0e0e0;
+        position: absolute;
+        top: 5px;
+        left: 15px;
+        z-index: 0;
+        line-height: 1;
+      }
+      .testimonial-card p {
+        font-size: 1.1em;
+        font-style: italic;
+        color: #555;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .testimonial-author img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+        border: 2px solid #5a7b73;
+      }
+      .author-info strong {
+        display: block;
+        font-weight: 600;
+        color: #212121;
+      }
+      .author-info span {
+        font-size: 0.9em;
+        color: #777;
+      }
+
+      /* Call to Action at Bottom */
+      #bottom-cta-section {
+        background-color: #5a7b73;
+        color: white;
+        padding: 90px 0;
+        text-align: center;
+      }
+      #bottom-cta-section h2 {
+        color: white;
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+      #bottom-cta-section p {
+        font-size: 1.4em;
+        margin-bottom: 50px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      #bottom-cta-button {
+        display: inline-block;
+        background-color: #e74c3c; /* Red for emphasis */
+        color: white;
+        padding: 18px 45px;
+        border-radius: 8px;
+        font-size: 1.5em;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        transition: background-color 0.3s ease, transform 0.2s ease,
+          box-shadow 0.3s ease;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      }
+      #bottom-cta-button:hover {
+        background-color: #c0392b;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Footer */
+      #main-footer {
+        background-color: #212121;
+        color: #f8f8f8;
+        padding: 60px 0;
+        font-size: 0.9em;
+      }
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+      .footer-col {
+        flex: 1;
+        min-width: 200px;
+      }
+      .footer-col h4 {
+        color: #5a7b73;
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-col ul li {
+        margin-bottom: 12px;
+      }
+      .footer-col ul li a {
+        color: #b0b0b0;
+        transition: color 0.3s ease;
+      }
+      .footer-col ul li a:hover {
+        color: #ffffff;
+      }
+      .social-icons a {
+        color: white;
+        font-size: 1.6em;
+        margin-right: 18px;
+        transition: color 0.3s ease;
+      }
+      .social-icons a:hover {
+        color: #5a7b73;
+      }
+      .footer-bottom {
+        text-align: center;
+        margin-top: 50px;
+        padding-top: 25px;
+        border-top: 1px solid #333;
+        color: #999;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        #hero-heading {
+          font-size: 3.2em;
+        }
+        #hero-subheading {
+          font-size: 1.2em;
+        }
+        #hero-cta-button {
+          padding: 15px 35px;
+          font-size: 1.3em;
+        }
+        .section-heading {
+          font-size: 2.5em;
+        }
+        .section-subheading {
+          margin-bottom: 50px;
+        }
+        .category-grid,
+        .value-grid {
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        #bottom-cta-section h2 {
+          font-size: 2.5em;
+        }
+        #bottom-cta-section p {
+          font-size: 1.2em;
+        }
+        #bottom-cta-button {
+          padding: 15px 35px;
+          font-size: 1.3em;
+        }
+        .footer-content {
+          flex-direction: column;
+          text-align: center;
+        }
+        .footer-col {
+          margin-bottom: 30px;
+        }
+        .footer-col ul {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        } /* Center lists in footer */
+        .social-icons {
+          margin-top: 15px;
+        }
+      }
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav-links {
+          margin-top: 15px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          width: 100%;
+        }
+        .nav-links a {
+          margin: 0 10px 10px 10px;
+        }
+        #shop-now-nav-btn {
+          margin-top: 15px;
+          align-self: center;
+        }
+        #hero-section {
+          padding: 100px 20px;
+          min-height: 500px;
+        }
+        #hero-heading {
+          font-size: 2.5em;
+        }
+        #hero-subheading {
+          font-size: 1em;
+        }
+        .section {
+          padding: 70px 0;
+        }
+        .section-heading {
+          font-size: 2em;
+        }
+        .category-card img {
+          height: 250px;
+        }
+        .testimonial-slider {
+          flex-direction: column;
+          align-items: center;
+        }
+        .testimonial-card {
+          max-width: 90%;
+        }
+      }
+      @media (max-width: 576px) {
+        #hero-heading {
+          font-size: 2em;
+        }
+        #hero-cta-button {
+          padding: 12px 25px;
+          font-size: 1.1em;
+        }
+        .section-heading {
+          font-size: 1.8em;
+        }
+        .category-overlay h3 {
+          font-size: 1.5em;
+        }
+        .value-item h3 {
+          font-size: 1.5em;
+        }
+        #bottom-cta-section h2 {
+          font-size: 2em;
+        }
+        #bottom-cta-button {
+          padding: 12px 25px;
+          font-size: 1.1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5X8BS8QC"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header id="main-header">
+      <div class="container navbar">
+        <a href="#" id="store-logo">Haven Interiors</a>
+        <nav class="nav-links">
+          <a href="#category-showcase">Shop By Room</a>
+          <a href="#value-proposition">Why Us</a>
+          <a href="#customer-testimonials">Reviews</a>
+          <a href="#main-footer">Contact</a>
+        </nav>
+        <a href="products.html" id="shop-now-nav-btn">Shop Now</a>
+      </div>
+    </header>
+
+    <section id="hero-section">
+      <div class="hero-content">
+        <h1 id="hero-heading">
+          Elevate Your Space. Discover Timeless Designs.
+        </h1>
+        <p id="hero-subheading">
+          From modern minimalism to classic elegance, find the perfect furniture
+          to transform your home into a haven.
+        </p>
+        <a href="products.html" id="hero-cta-button">Explore Our Collections</a>
+      </div>
+    </section>
+
+    <section id="category-showcase" class="section">
+      <div class="container">
+        <h2 class="section-heading">Shop By Room & Style</h2>
+        <p class="section-subheading">
+          Browse our curated selections and find inspiration for every corner of
+          your home.
+        </p>
+        <div class="category-grid">
+          <a
+            href="product-listing.html?category=living-room"
+            class="category-card"
+            id="living-room-card"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1596760086311-b4f0b2404e90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjU0OTd8MHwxfHNlYXJjaHw3fHxsaXZpbmclMjByb29tJTIwZnVybml0dXJlfGVufDB8fHx8MTcwMzg1MDczMHww&ixlib=rb-4.0.3&q=80&w=1080"
+              alt="Living Room Furniture"
+            />
+            <div class="category-overlay">
+              <h3>Living Room</h3>
+              <p>
+                Comfortable sofas, stylish coffee tables, and elegant
+                entertainment units.
+              </p>
+              <span class="shop-link">Shop Living Room &#8594;</span>
+            </div>
+          </a>
+          <a
+            href="product-listing.html?category=bedroom"
+            class="category-card"
+            id="bedroom-card"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1596436889154-15f187a54823?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjU0OTd8MHwxfHNlYXJjaHwyMHx8YmVkcm9vbSUyMGZ1cm5pdHVyZXxlbnwwfHx8fDE3MDM4NTA4ODN8MA&ixlib=rb-4.0.3&q=80&w=1080"
+              alt="Bedroom Furniture"
+            />
+            <div class="category-overlay">
+              <h3>Bedroom</h3>
+              <p>Cozy beds, spacious wardrobes, and functional nightstands.</p>
+              <span class="shop-link">Shop Bedroom &#8594;</span>
+            </div>
+          </a>
+          <a
+            href="product-listing.html?category=dining"
+            class="category-card"
+            id="dining-room-card"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1577517172049-74d6c41b8c00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjU0OTd8MHwxfHNlYXJjaHwyfHxkaW5pbmclMjByb29tJTIwZnVybml0dXJlfGVufDB8fHx8MTcwMzg1MDk3OXww&ixlib=rb-4.0.3&q=80&w=1080"
+              alt="Dining Room Furniture"
+            />
+            <div class="category-overlay">
+              <h3>Dining Room</h3>
+              <p>
+                Stylish dining sets and storage solutions for memorable meals.
+              </p>
+              <span class="shop-link">Shop Dining Room &#8594;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="value-proposition" class="section">
+      <div class="container">
+        <h2 class="section-heading">Why Choose Haven Interiors?</h2>
+        <p class="section-subheading">
+          We combine exceptional craftsmanship with unparalleled customer
+          service to bring your vision to life.
+        </p>
+        <div class="value-grid">
+          <div class="value-item" id="quality-item">
+            <img
+              src="https://raw.githubusercontent.com/google/material-design-icons/master/png/action/extension/materialicons/24dp/2x/baseline_extension_black_24dp.png"
+              alt="Craftsmanship Icon"
+            />
+            <h3>Superior Craftsmanship</h3>
+            <p>
+              Each piece is meticulously crafted using premium materials,
+              ensuring durability and timeless beauty.
+            </p>
+          </div>
+          <div class="value-item" id="design-item">
+            <img
+              src="https://raw.githubusercontent.com/google/material-design-icons/master/png/social/palette/materialicons/24dp/2x/baseline_palette_black_24dp.png"
+              alt="Unique Design Icon"
+            />
+            <h3>Unique & Modern Designs</h3>
+            <p>
+              Stay ahead of trends with our exclusive designs that blend
+              functionality with aesthetic appeal.
+            </p>
+          </div>
+          <div class="value-item" id="delivery-item">
+            <img
+              src="https://raw.githubusercontent.com/google/material-design-icons/master/png/maps/local_shipping/materialicons/24dp/2x/baseline_local_shipping_black_24dp.png"
+              alt="Fast Delivery Icon"
+            />
+            <h3>Hassle-Free Delivery</h3>
+            <p>
+              Enjoy prompt and secure delivery, with professional assembly
+              services available.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="customer-testimonials" class="section">
+      <div class="container">
+        <h2 class="section-heading">What Our Customers Say</h2>
+        <p class="section-subheading">
+          Hear from homeowners who have transformed their spaces with Haven
+          Interiors.
+        </p>
+        <div class="testimonial-slider">
+          <div class="testimonial-card" id="testimonial-1">
+            <p>
+              "Absolutely love my new living room set! The quality is
+              outstanding, and it truly elevated the look of my home. Delivery
+              was smooth and on time."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjU0OTd8MHwxfHNlYXJjaHwxNXx8cG9ydHJhaXQlMjBmb3JtYWx8ZW58MHx8fHwxNzAzODUxNDg1fDA&ixlib=rb-4.0.3&q=80&w=1080"
+                alt="Customer Sarah M."
+              />
+              <div class="author-info">
+                <strong>Sarah M.</strong>
+                <span>Bangalore, India</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" id="testimonial-2">
+            <p>
+              "The dining table is a masterpiece! It's sturdy, beautifully
+              designed, and has become the centerpiece of our family gatherings.
+              Highly recommend Haven Interiors!"
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjU0OTd8MHwxfHNlYXJjaHwxOXx8cG9ydHJhaXQlMjBmb3JtYWx8ZW58MHx8fHwxNzAzODUxNDg1fDA&ixlib=rb-4.0.3&q=80&w=1080"
+                alt="Customer Rajesh K."
+              />
+              <div class="author-info">
+                <strong>Rajesh K.</strong>
+                <span>Hyderabad, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bottom-cta-section">
+      <div class="container">
+        <h2>Ready to Redefine Your Home?</h2>
+        <p>
+          Explore our exquisite furniture collections and find pieces that
+          resonate with your style and comfort needs.
+        </p>
+        <a href="product-listing.html" id="bottom-cta-button"
+          >Start Shopping Today</a
+        >
+      </div>
+    </section>
+
+    <footer id="main-footer">
+      <div class="container footer-content">
+        <div class="footer-col" id="about-us-footer">
+          <h4>Haven Interiors</h4>
+          <p>
+            Curating exceptional furniture that blends modern aesthetics with
+            lasting quality. Your home, elevated.
+          </p>
+          <div class="social-icons" style="margin-top: 20px">
+            <a href="#" aria-label="Facebook"
+              ><img
+                src="https://raw.githubusercontent.com/google/material-design-icons/master/png/social/facebook/materialicons/24dp/2x/baseline_facebook_black_24dp.png"
+                alt="Facebook"
+                style="filter: invert(1)"
+            /></a>
+            <a href="#" aria-label="Instagram"
+              ><img
+                src="https://raw.githubusercontent.com/google/material-design-icons/master/png/social/instagram/materialicons/24dp/2x/baseline_instagram_black_24dp.png"
+                alt="Instagram"
+                style="filter: invert(1)"
+            /></a>
+            <a href="#" aria-label="Pinterest"
+              ><img
+                src="https://raw.githubusercontent.com/google/material-design-icons/master/png/social/pinterest/materialicons/24dp/2x/baseline_pinterest_black_24dp.png"
+                alt="Pinterest"
+                style="filter: invert(1)"
+            /></a>
+          </div>
+        </div>
+        <div class="footer-col" id="customer-service-footer">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="#">Track Your Order</a></li>
+          </ul>
+        </div>
+        <div class="footer-col" id="our-collections-footer">
+          <h4>Our Collections</h4>
+          <ul>
+            <li>
+              <a href="product-listing.html?category=sofas"
+                >Sofas & Sectionals</a
+              >
+            </li>
+            <li>
+              <a href="product-listing.html?category=beds">Beds & Mattresses</a>
+            </li>
+            <li>
+              <a href="product-listing.html?category=tables">Tables & Desks</a>
+            </li>
+            <li>
+              <a href="product-listing.html?category=storage"
+                >Storage & Cabinets</a
+              >
+            </li>
+            <li><a href="product-listing.html">All Products</a></li>
+          </ul>
+        </div>
+        <div class="footer-col" id="legal-footer">
+          <h4>About & Legal</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Haven Interiors. All rights reserved. Prices are in INR.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

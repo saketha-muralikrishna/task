@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5X8BS8QC");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="thank-you-page-title">
+      Thank You for Your Order! - Your Store
+    </title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+      /* Basic styling for a pleasant thank you page */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 40px 20px;
+        background-color: #eaf7ed; /* Light green background */
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Full viewport height */
+        box-sizing: border-box;
+      }
+      #thank-you-container {
+        max-width: 700px;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      #check-mark-icon {
+        color: #28a745; /* Green checkmark */
+        font-size: 80px;
+        margin-bottom: 25px;
+        display: block; /* Ensures it's on its own line */
+        line-height: 1;
+      }
+
+      h1 {
+        color: #28a745; /* Green heading */
+        font-size: 2.8em;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+      h2 {
+        font-size: 1.5em;
+        color: #555;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+      p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+      #order-details-summary {
+        background-color: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 25px;
+        margin-top: 25px;
+        text-align: left;
+      }
+      #order-details-summary p {
+        margin-bottom: 10px;
+        font-size: 1em;
+      }
+      #order-details-summary strong {
+        color: #000;
+      }
+      #order-items-list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 15px;
+        border-top: 1px dashed #ddd;
+        padding-top: 15px;
+      }
+      #order-items-list li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        font-size: 0.95em;
+        color: #666;
+      }
+      #order-items-list li span:first-child {
+        flex-grow: 1;
+        text-align: left;
+      }
+      #order-items-list li span:last-child {
+        white-space: nowrap; /* Prevent price from wrapping */
+        text-align: right;
+      }
+
+      .button-group {
+        margin-top: 35px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      .action-button {
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 5px;
+        font-size: 1.1em;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+        min-width: 180px;
+      }
+      #continue-shopping-button {
+        background-color: #007bff; /* Blue */
+        color: white;
+        border: none;
+      }
+      #continue-shopping-button:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+      }
+      #view-order-button {
+        background-color: #6c757d; /* Gray */
+        color: white;
+        border: none;
+      }
+      #view-order-button:hover {
+        background-color: #5a6268;
+        transform: translateY(-2px);
+      }
+      #contact-support-button {
+        background-color: #f0ad4e; /* Orange */
+        color: white;
+        border: none;
+      }
+      #contact-support-button:hover {
+        background-color: #ec971f;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5X8BS8QC"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="thank-you-container">
+      <span id="check-mark-icon">&#10004;</span>
+
+      <h1 id="thank-you-heading">Thank You for Your Order!</h1>
+
+      <p id="confirmation-message">
+        Your order has been placed successfully. A confirmation email with your
+        order details has been sent to
+        <strong id="customer-email">customer@example.com</strong>.
+      </p>
+
+      <div id="order-details-summary">
+        <h2 id="summary-heading">Order Details</h2>
+        <p>Order ID: <strong id="order-id">#XYZ7890123</strong></p>
+        <p>Order Date: <strong id="order-date">July 1, 2025</strong></p>
+        <p>Total Amount Paid: <strong id="total-amount">₹2,249.00</strong></p>
+        <p>Payment Method: <strong id="payment-method">Credit Card</strong></p>
+        <p>
+          Estimated Delivery:
+          <strong id="estimated-delivery">July 5 - July 7, 2025</strong>
+        </p>
+
+        <h3 id="items-heading">Items Purchased:</h3>
+        <ul id="order-items-list">
+          <li id="item-wallet">
+            <span>Luxury Handcrafted Leather Wallet (x1)</span>
+            <span>₹1,299.00</span>
+          </li>
+          <li id="item-tshirt">
+            <span>Blue T-Shirt (x2)</span>
+            <span>₹800.00</span>
+          </li>
+        </ul>
+      </div>
+
+      <p id="next-steps-message">
+        We'll send you tracking information as soon as your order ships.
+      </p>
+
+      <div class="button-group">
+        <a href="index.html" id="continue-shopping-button" class="action-button"
+          >Continue Shopping</a
+        >
+        <a
+          href="order-history.html"
+          id="view-order-button"
+          class="action-button"
+          >View Your Order</a
+        >
+        <a href="contact.html" id="contact-support-button" class="action-button"
+          >Contact Support</a
+        >
+      </div>
+    </div>
+
+    <script>
+      // In a real application, you would populate these dynamically
+      // with data passed from the backend after a successful payment.
+      // For demonstration, these are static.
+
+      // Example of how you might dynamically update content with JavaScript
+      document.addEventListener("DOMContentLoaded", () => {
+        // Assume you get this data from a successful API response or URL parameters
+        const orderData = {
+          orderId: "#ABC1234567",
+          customerEmail: "johndoe@example.com",
+          orderDate: "July 1, 2025",
+          totalAmount: "₹2,500.00",
+          paymentMethod: "UPI",
+          estimatedDelivery: "July 6 - July 8, 2025",
+          items: [
+            { name: "Ergonomic Office Chair (x1)", price: "₹1,800.00" },
+            { name: "Wireless Keyboard (x1)", price: "₹700.00" },
+          ],
+        };
+
+        document.getElementById("order-id").textContent = orderData.orderId;
+        document.getElementById("customer-email").textContent =
+          orderData.customerEmail;
+        document.getElementById("order-date").textContent = orderData.orderDate;
+        document.getElementById("total-amount").textContent =
+          orderData.totalAmount;
+        document.getElementById("payment-method").textContent =
+          orderData.paymentMethod;
+        document.getElementById("estimated-delivery").textContent =
+          orderData.estimatedDelivery;
+
+        const orderItemsList = document.getElementById("order-items-list");
+        orderItemsList.innerHTML = ""; // Clear existing static items
+
+        orderData.items.forEach((item) => {
+          const li = document.createElement("li");
+          li.innerHTML = `<span>${item.name}</span><span>${item.price}</span>`;
+          orderItemsList.appendChild(li);
+        });
+      });
+    </script>
+  </body>
+</html>
