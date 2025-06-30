@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5X8BS8QC");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="purchase-page-title">Confirm Your Order - Your Store</title>
+    <style>
+      /* Basic styling for the purchase confirmation page */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f0f2f5; /* Light gray background */
+        color: #333;
+      }
+      #purchase-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #2c3e50; /* Dark blue-gray */
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+      }
+      .section-title {
+        font-size: 1.6em;
+        color: #34495e; /* Slightly lighter blue-gray */
+        border-bottom: 2px solid #ecf0f1; /* Light border */
+        padding-bottom: 10px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+      .info-block {
+        background-color: #fcfcfc;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        padding: 20px;
+        margin-bottom: 25px;
+      }
+      .info-block p {
+        margin-bottom: 8px;
+        line-height: 1.6;
+        font-size: 1.05em;
+      }
+      .info-block strong {
+        color: #000;
+      }
+      #order-summary-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      #order-summary-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px dotted #e0e0e0;
+        font-size: 1.1em;
+      }
+      #order-summary-list li:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .item-name {
+        font-weight: bold;
+        color: #444;
+      }
+      .item-price {
+        white-space: nowrap;
+        color: #333;
+      }
+      .totals-section {
+        margin-top: 25px;
+        padding-top: 15px;
+        border-top: 2px solid #ecf0f1;
+      }
+      .totals-section p {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      .totals-section p strong {
+        color: #1a1a1a;
+      }
+      #grand-total {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #e74c3c; /* Red for final total */
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px dashed #ddd;
+      }
+
+      #place-order-button {
+        display: block;
+        width: 100%;
+        padding: 18px;
+        background-color: #2ecc71; /* Green */
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1.4em;
+        cursor: pointer;
+        text-decoration: none; /* For <a> tag */
+        text-align: center;
+        margin-top: 40px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      #place-order-button:hover {
+        background-color: #27ae60;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5X8BS8QC"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="purchase-container">
+      <h1 id="page-heading">Review Your Order</h1>
+
+      <h2 class="section-title" id="shipping-address-title">
+        Shipping Address
+      </h2>
+      <div id="shipping-address-info" class="info-block">
+        <p><strong id="shipping-name">John Doe</strong></p>
+        <p><span id="shipping-address1">123 Main Street</span></p>
+        <p><span id="shipping-address2">Apartment 4B</span></p>
+        <p><span id="shipping-city-state-zip">Anytown, CA 90210</span></p>
+        <p><span id="shipping-country">United States</span></p>
+        <p>Phone: <strong id="shipping-phone">+1 (555) 123-4567</strong></p>
+      </div>
+
+      <h2 class="section-title" id="billing-address-title">Billing Address</h2>
+      <div id="billing-address-info" class="info-block">
+        <p>Same as Shipping Address</p>
+      </div>
+
+      <h2 class="section-title" id="payment-method-title">Payment Method</h2>
+      <div id="payment-method-info" class="info-block">
+        <p>Method: <strong id="selected-payment-method">Credit Card</strong></p>
+        <p>
+          Card Ending In:
+          <strong id="card-last-four">**** **** **** 1234</strong>
+        </p>
+      </div>
+
+      <h2 class="section-title" id="order-items-title">Your Order</h2>
+      <div id="order-items-details" class="info-block">
+        <ul id="order-summary-list">
+          <li id="order-item-1">
+            <span class="item-name">Luxury Handcrafted Leather Wallet</span>
+            <span class="item-price">₹1,299.00</span>
+          </li>
+          <li id="order-item-2">
+            <span class="item-name">Blue T-Shirt (Size: L)</span>
+            <span class="item-price">₹400.00</span>
+          </li>
+          <li id="order-item-3">
+            <span class="item-name">Wireless Bluetooth Earbuds</span>
+            <span class="item-price">₹899.00</span>
+          </li>
+        </ul>
+
+        <div class="totals-section">
+          <p>
+            <span>Subtotal:</span>
+            <strong id="summary-subtotal">₹2,598.00</strong>
+          </p>
+          <p>
+            <span>Shipping:</span>
+            <strong id="summary-shipping">₹150.00</strong>
+          </p>
+          <p>
+            <span>Tax (GST):</span> <strong id="summary-tax">₹120.00</strong>
+          </p>
+          <p id="grand-total">
+            <span>Total to Pay:</span>
+            <strong id="final-total">₹2,868.00</strong>
+          </p>
+        </div>
+      </div>
+
+      <p style="text-align: center; font-size: 0.95em; color: #666">
+        By clicking "Place Order", you agree to our
+        <a href="terms.html" id="terms-link">Terms & Conditions</a>.
+      </p>
+
+      <a href="thankyou.html" id="place-order-button">Place Order</a>
+    </div>
+
+    <script>
+      // In a real application, JavaScript would fetch and populate this data
+      // from the cart and previous checkout steps, likely from a backend API.
+      // For this static example, assume the data is hardcoded or fetched.
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Example of how you would populate data dynamically
+        // You'd replace these with actual data passed from your server or previous pages.
+
+        // Shipping Info
+        document.getElementById("shipping-name").textContent = "Jane Doe";
+        document.getElementById("shipping-address1").textContent =
+          "456 Sample Road";
+        document.getElementById("shipping-address2").textContent = "Unit 10";
+        document.getElementById("shipping-city-state-zip").textContent =
+          "New Delhi, Delhi 110001";
+        document.getElementById("shipping-country").textContent = "India";
+        document.getElementById("shipping-phone").textContent =
+          "+91 (987) 654-3210";
+
+        // Payment Info
+        document.getElementById("selected-payment-method").textContent = "UPI";
+        // document.getElementById('card-last-four').textContent = '**** **** **** 5678'; // Use if credit card
+        document.getElementById("card-last-four").style.display = "none"; // Hide if not credit card
+        // document.getElementById('upi-id-display').textContent = 'jane.doe@upi'; // Show if UPI
+
+        // Order Items (dynamic example)
+        const itemsData = [
+          {
+            name: "Luxury Handcrafted Leather Wallet (x1)",
+            price: "₹1,299.00",
+          },
+          { name: "Blue T-Shirt (Size: L, x2)", price: "₹800.00" },
+          { name: "Wireless Bluetooth Earbuds (x1)", price: "₹899.00" },
+        ];
+
+        const orderSummaryList = document.getElementById("order-summary-list");
+        orderSummaryList.innerHTML = ""; // Clear existing static items
+
+        itemsData.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.id = `order-item-${index + 1}`; // Assign dynamic ID
+          li.innerHTML = `<span class="item-name">${item.name}</span><span class="item-price">${item.price}</span>`;
+          orderSummaryList.appendChild(li);
+        });
+
+        // Totals
+        document.getElementById("summary-subtotal").textContent = "₹2,998.00";
+        document.getElementById("summary-shipping").textContent = "₹50.00";
+        document.getElementById("summary-tax").textContent = "₹150.00"; // Example tax
+        document.getElementById("final-total").textContent = "₹3,198.00";
+      });
+
+      // The "Place Order" button simply links to thank-you.html in this static example.
+      // In a real application, this would trigger an AJAX call to finalize the order
+      // and then redirect to the thank you page upon success.
+    </script>
+  </body>
+</html>
